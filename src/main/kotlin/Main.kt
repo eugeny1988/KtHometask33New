@@ -88,4 +88,7 @@
             return count
         }
         println("Количество непрочитанных чатов у пользователя ${user1.name}: ${chat1.getUnreadChatsCount(1)}")
+        val chatFilter = {chat: Chat -> chat.hasLastMessage}
+        val chats = chatList.filter(chatFilter)
+        println(chats.size)
     }
