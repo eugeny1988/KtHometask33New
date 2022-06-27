@@ -91,12 +91,18 @@ fun main() {
     val chatFilter = { chat: Chat -> chat.hasLastMessage }
     val chats = chatList.filter(chatFilter)
     println(chats)
-    fun messagesList (chatId: Int, messageId: Int, count: Int): MutableList<Message>{
+    fun messagesList(chatId: Int, messageId: Int, count: Int): MutableList<Message> {
         var chatFound = mutableListOf<Chat>()
-        val chatFoundFunction = chatList.forEach{chat: Chat -> if (chat.id == chatId) chatFound.add(chat)}
-        val messagesReturn = {message: Message -> !message.isRead}
+        val chatFoundFunction = chatList.forEach { chat: Chat -> if (chat.id == chatId) chatFound.add(chat) }
+        val messagesReturn = { message: Message -> !message.isRead }
         var unreadMessagesList = mutableListOf<Message>()
-        var unreadMessages = chatFound.forEach{message: Message -> if (!message.isRead) unreadMessagesList.add(message)}
+        var i = 1
+        var unreadMessages = chatFound.forEach {
+            if (!it.messages[i-1].isRead && i <= count && i>=messageId) unreadMessagesList.add(it.messages[i-1])
+            i++
+        }
+        return unreadMessagesList
     }
+    println(messagesList(3,0,2))
 
 }
