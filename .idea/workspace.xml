@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db97ded-3285-473e-8c09-cd22e165237b" name="Changes" comment="Changed any functions">
+    <list default="true" id="1db97ded-3285-473e-8c09-cd22e165237b" name="Changes" comment="Edit messagesList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656316952285</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit messagesList">
+      <created>1656324718063</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656324718063</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +114,7 @@
     <MESSAGE value="Remade project" />
     <MESSAGE value="Added lambda expression" />
     <MESSAGE value="Changed any functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed any functions" />
+    <MESSAGE value="Edit messagesList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit messagesList" />
   </component>
 </project>

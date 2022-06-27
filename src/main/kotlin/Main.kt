@@ -98,11 +98,40 @@ fun main() {
         var unreadMessagesList = mutableListOf<Message>()
         var i = 1
         var unreadMessages = chatFound.forEach {
-            if (!it.messages[i-1].isRead && i <= count && i>=messageId) unreadMessagesList.add(it.messages[i-1])
+            if (!it.messages[i - 1].isRead && i <= count && i >= messageId) unreadMessagesList.add(it.messages[i - 1])
             i++
+            it.messages[i - 1].isRead = true
         }
         return unreadMessagesList
     }
-    println(messagesList(3,0,2))
+    println(messagesList(3, 0, 2))
+    val newMessage = Message(
+        "Новое сообщение",
+        user1,
+        false,
+        false
+    )
+    chat1.createMessage(newMessage)
+    chat2.deleteMessage(1)
+    fun createChat(userOne: User, userTwo: User, message: Message): Chat {
+        val isChatExist = chatList.map{
+            !(it.user1 != userOne || it.user2 != userTwo)
+        }
+        if (isChatExist)
+        return Chat(
+            chatList.size + 1,
+            userOne,
+            userTwo,
+            mutableListOf(message)
+        )
+    }
+
+    val messageToNewChat = Message(
+        "Привет",
+        user1,
+        false,
+        false
+    )
+    var newChat = createChat(user1, user3, messageToNewChat)
 
 }
