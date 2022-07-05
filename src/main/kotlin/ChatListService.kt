@@ -19,7 +19,7 @@ object ChatListService {
         val messagesReturn = { message: Message -> !message.isRead }
         var unreadMessagesList = mutableListOf<Message>()
         var i = 1
-        var unreadMessages = chatFound.forEach {
+        var unreadMessages = chatFound.map {
             if (!it.messages[i - 1].isRead && i <= count && i >= messageId) unreadMessagesList.add(it.messages[i - 1])
             i++
             it.messages[i - 1].isRead = true

@@ -1,3 +1,4 @@
+import ChatListService.getUnreadChatsCount
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -5,15 +6,15 @@ import org.junit.Assert.*
 class ChatListServiceTest {
 
     @Test
-    fun ChatListService.messagesList() {
-        val expectedValue = mutableListOf(message1, message2)
-        val realValue = messagesList(1, 1, 1)
+    fun messagesList() {
+        val expectedValue = mutableListOf<Message>()
+        val realValue = ChatListService.messagesList(1, 1, 2)
         assertEquals(expectedValue, realValue)
     }
 
     @Test
-    fun ChatListService.getUnreadChatsCount() {
-        val expectedValue = 2
+    fun getUnreadChatsCount() {
+        val expectedValue = 1
         val realValue = chat1.getUnreadChatsCount(1)
         assertEquals(expectedValue, realValue)
     }
