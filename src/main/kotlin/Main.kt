@@ -1,3 +1,6 @@
+import ChatListService.getUnreadChatsCount
+import ChatListService.messagesList
+
 val user1 = User(
     "Евгений",
     1
@@ -76,19 +79,7 @@ var chatList = mutableListOf<Chat>(chat1, chat2, chat3)
 fun main() {
     chat2.editMessage(1,"Да", user1)
 
-    fun Chat.getUnreadChatsCount(id: Int): Int {
-        var count = 0
-        for (user: User in userList) {
-            if (user.id == id) {
-                for (chat: Chat in chatList) {
-                    if ((chat.user1 === user || chat.user2 === user) && !chat.isChatRead) {
-                        count++
-                    }
-                }
-            }
-        }
-        return count
-    }
+
     println("Количество непрочитанных чатов у пользователя ${user1.name}: ${chat1.getUnreadChatsCount(1)}")
     val chatFilter = { chat: Chat -> chat.hasLastMessage }
     val chats = chatList.filter(chatFilter)
@@ -112,7 +103,7 @@ fun main() {
         false
     )
     var newChat = createChat(user1, user3, messageToNewChat)
-    TODO("https://github.com/netology-code/kt-homeworks/tree/master/09_lambda")
+    TODO("https://github.com/netology-code/kt-homeworks/tree/master/10_sequences")
 
 }
 
@@ -136,16 +127,5 @@ fun createChat(userOne: User, userTwo: User, message: Message): Chat? {
 
 }
 
-fun messagesList(chatId: Int, messageId: Int, count: Int): MutableList<Message> {
-    var chatFound = mutableListOf<Chat>()
-    val chatFoundFunction = chatList.forEach { chat: Chat -> if (chat.id == chatId) chatFound.add(chat) }
-    val messagesReturn = { message: Message -> !message.isRead }
-    var unreadMessagesList = mutableListOf<Message>()
-    var i = 1
-    var unreadMessages = chatFound.forEach {
-        if (!it.messages[i - 1].isRead && i <= count && i >= messageId) unreadMessagesList.add(it.messages[i - 1])
-        i++
-        it.messages[i - 1].isRead = true
-    }
-    return unreadMessagesList
-}
+
+

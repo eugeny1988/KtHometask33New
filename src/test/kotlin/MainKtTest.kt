@@ -16,11 +16,5 @@ class MainKtTest {
         val realValue = createChat(user1, user3, message1)
         assertEquals(expectedValue, realValue)
     }
-
-    @Test
-    fun messagesList() {
-        val expectedValue = mutableListOf(message1, message2)
-        val realValue = messagesList(1, 1, 1)
-        assertEquals(expectedValue, realValue)
-    }
 }
+
