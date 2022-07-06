@@ -1,18 +1,5 @@
 object ChatListService {
 
-    fun Chat.getUnreadChatsCount(id: Int): Int {
-        var count = 0
-        for (user: User in userList) {
-            if (user.id == id) {
-                for (chat: Chat in chatList) {
-                    if ((chat.user1 === user || chat.user2 === user) && !chat.isChatRead) {
-                        count++
-                    }
-                }
-            }
-        }
-        return count
-    }
     fun messagesList(chatId: Int, messageId: Int, count: Int): MutableList<Message> {
         var chatFound = mutableListOf<Chat>()
         val chatFoundFunction = chatList.forEach { chat: Chat -> if (chat.id == chatId) chatFound.add(chat) }
@@ -26,4 +13,20 @@ object ChatListService {
         }
         return unreadMessagesList
     }
+}
+
+fun Chat.getUnreadChatsCount(id: Int): Int {
+    var tempUserList = mutableListOf<User>()
+    var count = 0
+    userList.map { user: User ->
+        if (user.id == id) {
+            chatList.map {
+                if ((it.user1 === user || it.user2 === user) && !it.isChatRead) {
+                    count++
+                }
+            }
+        }
+    }
+
+    return count
 }

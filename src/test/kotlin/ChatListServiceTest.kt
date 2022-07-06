@@ -1,4 +1,3 @@
-import ChatListService.getUnreadChatsCount
 import org.junit.Test
 
 import org.junit.Assert.*

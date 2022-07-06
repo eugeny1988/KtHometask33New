@@ -1,4 +1,3 @@
-import ChatListService.getUnreadChatsCount
 import ChatListService.messagesList
 
 val user1 = User(
@@ -77,7 +76,7 @@ var chat3 = Chat(
 var userList = mutableListOf<User>(user1, user2, user3, user4)
 var chatList = mutableListOf<Chat>(chat1, chat2, chat3)
 fun main() {
-    chat2.editMessage(1,"Да", user1)
+    chat2.editMessage(1, "Да", user1)
 
 
     println("Количество непрочитанных чатов у пользователя ${user1.name}: ${chat1.getUnreadChatsCount(1)}")
@@ -103,26 +102,29 @@ fun main() {
         false
     )
     var newChat = createChat(user1, user3, messageToNewChat)
-    TODO("https://github.com/netology-code/kt-homeworks/tree/master/10_sequences")
 
 }
 
 fun createChat(userOne: User, userTwo: User, message: Message): Chat? {
     var chatExample: Chat? = null
     var isChatExist = false
-    for (chat: Chat in chatList) {
-        if (chat.user1 === userOne || chat.user2 === userTwo) {
-            isChatExist = true
+    var isChatExistList = mutableListOf<Boolean>()
+    chatList.forEach {
+        isChatExist = it.user1 === userOne || it.user2 === userTwo
+           isChatExistList.add(isChatExist)
+
+    }
+        isChatExistList.forEach {isExist: Boolean ->
+            if (!isExist) {
+                chatExample = Chat(
+                    chatList.size + 1,
+                    userOne,
+                    userTwo,
+                    mutableListOf(message)
+                )
+            }
         }
-    }
-    if (!isChatExist) {
-        chatExample = Chat(
-            chatList.size + 1,
-            userOne,
-            userTwo,
-            mutableListOf(message)
-        )
-    }
+
     return chatExample
 
 }

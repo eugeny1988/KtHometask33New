@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db97ded-3285-473e-8c09-cd22e165237b" name="Changes" comment="Created ChatListService.kt">
+    <list default="true" id="1db97ded-3285-473e-8c09-cd22e165237b" name="Changes" comment="Corrected autotests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ChatListService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ChatListService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ChatListServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ChatListServiceTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChatListServiceTest.messagesList">
+  <component name="RunManager" selected="JUnit.ChatTest">
     <configuration name="ChatListServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KtHometask33.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -108,33 +109,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainKtTest.createChat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KtHometask33.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainKtTest" />
-      <option name="METHOD_NAME" value="createChat" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="ChatTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainKtTest.messagesList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainKtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KtHometask33.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainKtTest" />
-      <option name="METHOD_NAME" value="messagesList" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChatListServiceTest.messagesList" />
+        <item itemvalue="JUnit.ChatTest" />
+        <item itemvalue="JUnit.MainKtTest" />
         <item itemvalue="JUnit.ChatListServiceTest" />
         <item itemvalue="JUnit.ChatListServiceTest.getUnreadChatsCount" />
-        <item itemvalue="JUnit.MainKtTest.messagesList" />
-        <item itemvalue="JUnit.MainKtTest.createChat" />
+        <item itemvalue="JUnit.ChatListServiceTest.messagesList" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657010246486</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Corrected autotests">
+      <created>1657022298789</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657022298789</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,7 +217,8 @@
     <MESSAGE value="Add createChat" />
     <MESSAGE value="Add ChatTest.kt" />
     <MESSAGE value="Created ChatListService.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created ChatListService.kt" />
+    <MESSAGE value="Corrected autotests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected autotests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
